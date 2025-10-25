@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flappy Colb</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <div class="left-credits">Created by Dastent</div>
+        <div class="game-header">
+            <h1>🐝 Flappy Colb</h1>
+            <div class="score">Score: <span id="score">0</span></div>
+        </div>
+        
+        <div class="game-buttons-top">
+            <button id="restartBtn" class="btn restart-btn" style="display: none;">Play Again</button>
+            <button id="leaderboardBtn" class="btn leaderboard-btn">Leaderboard</button>
+        </div>
+        
+        <canvas id="gameCanvas" width="700" height="450"></canvas>
+        
+        <div class="game-controls">
+            <div class="instructions">
+                <p>Press SPACE or click to start the game and make the bee flap its wings!</p>
+                <p>Avoid obstacles and collect points!</p>
+            </div>
+        </div>
+        
+        <div class="game-over" id="gameOver" style="display: none;">
+            <h2>Game Over!</h2>
+            <p>Your Score: <span id="finalScore">0</span></p>
+            <p>Best Score: <span id="bestScore">0</span></p>
+        </div>
+    </div>
+
+    <!-- Leaderboard Modal -->
+    <div id="leaderboardModal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>🏆 Leaderboard</h2>
+            <div id="leaderboardList" class="leaderboard-list">
+                <div class="loading">Loading...</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Welcome Modal -->
+    <div id="welcomeModal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <h2>🐝 Welcome to Flappy Colb!</h2>
+            <p>Enter your nickname to start playing:</p>
+            <input type="text" id="playerNickname" placeholder="Your nickname" maxlength="20">
+            <div class="modal-buttons">
+                <button id="startWithNickname" class="btn start-btn">Start Game</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Name Input Modal -->
+    <div id="nameModal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <h2>🎉 New High Score!</h2>
+            <p>Enter your name:</p>
+            <input type="text" id="playerName" placeholder="Your name" maxlength="20">
+            <div class="modal-buttons">
+                <button id="saveScoreBtn" class="btn start-btn">Save Score</button>
+                <button id="skipScoreBtn" class="btn restart-btn">Skip</button>
+            </div>
+        </div>
+    </div>
+    
+           <script src="leaderboard-api.js"></script>
+           <script src="config.js"></script>
+           <script src="script.js"></script>
+</body>
+</html>
+
